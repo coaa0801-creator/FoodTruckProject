@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class FoodTruckApp {
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] allTrucks = new FoodTruck[5];
+//	TODO fix this value
+	
 	static FoodTruckApp runSys = new FoodTruckApp();
 	FoodTruck runApp = new FoodTruck();
 	DecimalFormat round = new DecimalFormat("#.0");
@@ -136,7 +138,7 @@ public class FoodTruckApp {
 					System.out.println("Please enter a valid search option");
 					}
 				}
-				break;
+				break;//break search or switch 4
 			case "QUIT":
 			case "5":
 				keepGoing = false;
