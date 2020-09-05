@@ -45,14 +45,16 @@ public class FoodTruck {
 		return highRateTruck;
 	}
 	public void setHighRating(int rating) {
-		
+		int newHighRate = 0;
+		int highRate = rating;
 		for(int i=0; i < trucks.length; i++) {
-			int highRate = 0;
-			if (trucks[i] > highRate) {
+			if (newHighRate < highRate) {
+				newHighRate = highRate;
+			if (trucks[i] > newHighRate) {
 				highRateTruck = i;
 			}
 		}
-		
+		}
 	}
 	public double getAverage() {
 	   double [] avgCopy = new double[trucks.length];
