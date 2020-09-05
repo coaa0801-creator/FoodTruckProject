@@ -71,10 +71,10 @@ public class FoodTruckApp {
 						System.out.print("What is the name of the truck?   ");
 						String searchTruck = kb.nextLine();
 						for (int i = 0; i < allTrucks.length; i++) {
-							String test = allTrucks[i].toString();
-							if (test == null) {
-								
+							if (allTrucks[i] == null) {
+								continue;
 							}
+							String test = allTrucks[i].toString();
 							if (test.contains(searchTruck)) {
 								System.out.println(allTrucks[i].toString());
 							}
@@ -91,6 +91,9 @@ public class FoodTruckApp {
 						System.out.print("What is the rating you gave the truck?   ");
 						String searchRating = kb.nextLine();
 						for (int i = 0; i < allTrucks.length; i++) {
+							if (allTrucks[i] == null) {
+								continue;
+							}
 							String test = allTrucks[i].toString(); 
 							if (test.contains(searchRating)) {
 								System.out.println(allTrucks[i].toString());
@@ -107,6 +110,9 @@ public class FoodTruckApp {
 						System.out.print("What is the rating you gave the truck?   ");
 						String searchMenuCategory = kb.nextLine();
 						for (int i = 0; i < allTrucks.length; i++) {
+							if (allTrucks[i] == null) {
+								continue;
+							}
 							String test = allTrucks[i].toString(); 
 							if (test.contains(searchMenuCategory)) {
 								System.out.println(allTrucks[i].toString());
@@ -148,7 +154,8 @@ public class FoodTruckApp {
 		System.out.println("|   1: By Name                   |");
 		System.out.println("|   2: By Rating                 |");
 		System.out.println("|   3: By Category               |");
-		System.out.println("|   4: MAIN MENU                 |");
+		System.out.println("|   4: Main Menu                 |");
+		System.out.println("|   5: Quit                      |");
 		System.out.println("|                                |");
 		System.out.println("<================================>");
 
@@ -196,7 +203,7 @@ public class FoodTruckApp {
 		System.out.println("|   2: See Average Rating        |");
 		System.out.println("|   3: See Highest Rated Truck   |");
 		System.out.println("|   4: Search                    |");
-		System.out.println("|   5: QUIT                      |");
+		System.out.println("|   5: Quit                      |");
 		System.out.println("|                                |");
 		System.out.println("<================================>");
 
@@ -207,7 +214,7 @@ public class FoodTruckApp {
 		System.out.println("|                                |");
 		System.out.println("|                                |");
 		System.out.println("|                                |");
-		System.out.println("|            GOODBYE             |");
+		System.out.println("|            Goodbye             |");
 		System.out.println("|                                |");
 		System.out.println("|                                |");
 		System.out.println("|                                |");
