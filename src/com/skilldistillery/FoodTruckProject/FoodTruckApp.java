@@ -125,6 +125,7 @@ public class FoodTruckApp {
 					case "5": case "QUIT":
 						search = false;
 						keepGoing = false;
+						break;
 					default: 	
 					System.out.println("Please enter a valid search option");
 					}
