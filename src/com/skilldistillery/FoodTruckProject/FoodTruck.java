@@ -20,7 +20,25 @@ public class FoodTruck {
 	public String toString() {
 		return "FoodTruck " + uniqueID + ":  " + name + "\tServes:  " + category + "\tYou rated " + rating + " out of 10";
 	}
-	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 
 
 }
