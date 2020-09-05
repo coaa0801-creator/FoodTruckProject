@@ -47,9 +47,15 @@ public class FoodTruckApp {
 	
 	
 	private void PrintMenu () {
-		
-		
-		
+		System.out.println("<================================>");
+		System.out.println("|            MAIN MENU           |");
+		System.out.println("|                                |");
+		System.out.println("|   1: List All Trucks           |");
+		System.out.println("|   2: See Average Rating        |");
+		System.out.println("|   3: See Highest Rated Truck   |");
+		System.out.println("|   4: QUIT                      |");
+		System.out.println("|                                |");
+		System.out.println("<================================>");
 		
 	}
 
