@@ -9,9 +9,7 @@ public class FoodTruckApp {
 	static FoodTruckApp runSys = new FoodTruckApp();
 	FoodTruck runApp = new FoodTruck();
 	DecimalFormat round = new DecimalFormat("#.0");
-	
-	
-	
+
 	public static void main(String[] args) {
 //		FoodTruckApp runSys = new FoodTruckApp();
 		runSys.createTrucks();
@@ -26,7 +24,9 @@ public class FoodTruckApp {
 			String choice = kb.nextLine();
 			choice = choice.toUpperCase();
 			switch (choice) {
-			case "LIST": case "LIST ALL": case "LIST ALL TRUCKS": 
+			case "LIST":
+			case "LIST ALL":
+			case "LIST ALL TRUCKS":
 			case "1":
 				for (int numTrucks = 0; numTrucks < allTrucks.length; numTrucks++) {
 					if (allTrucks[numTrucks] == null) {
@@ -35,36 +35,89 @@ public class FoodTruckApp {
 					System.out.println(allTrucks[numTrucks].toString());
 				}
 				break;
-			case "AVERAGE":  case "AVG": case "SEE AVERAGE": case "AVERAGE RATING": case "SEE AVERAGE RATING":	
+			case "AVERAGE":
+			case "AVG":
+			case "SEE AVERAGE":
+			case "AVERAGE RATING":
+			case "SEE AVERAGE RATING":
 			case "2":
 				double average = runApp.getAverage();
-				System.out.println("The average rating of the Food Trucks you have logged is: " + round.format(average));
+				System.out
+						.println("The average rating of the Food Trucks you have logged is: " + round.format(average));
 				break;
-			case "SEE HIGHEST RATED TRUCK": case "HIGHEST": case "SEE HIGHEST": case "HIGHEST RATED": case "SEE HIGHEST RATED": case "HIGHEST RATED TRUCK":	
+			case "SEE HIGHEST RATED TRUCK":
+			case "HIGHEST":
+			case "SEE HIGHEST":
+			case "HIGHEST RATED":
+			case "SEE HIGHEST RATED":
+			case "HIGHEST RATED TRUCK":
 			case "3":
 				int highRateTruck = runApp.getHighRating();
 				System.out.println("Your highest rated truck is " + allTrucks[highRateTruck].toString());
 				break;
-			case "SEARCH":	
+			case "SEARCH":
 			case "4":
-				runSys.searchMenu();
 				boolean search = true;
 				while (search) {
+					runSys.searchMenu();
 					String searchChoice = kb.nextLine();
 					searchChoice = searchChoice.toUpperCase();
 					switch (searchChoice) {
-					case "NAME": case "SEARCH BY NAME": case "SEARCH NAME": case "BY NAME":
-					case "1": 
+					case "NAME":
+					case "SEARCH BY NAME":
+					case "SEARCH NAME":
+					case "BY NAME":
+					case "1":
 						System.out.print("What is the name of the truck?   ");
 						String searchTruck = kb.nextLine();
-						for (int i = 0 ; i < allTrucks.length ; i++) {
-						if ((allTrucks[i].toString()).contains(searchTruck)) {
-							System.out.println(allTrucks[i].toString());
-						}	
+						for (int i = 0; i < allTrucks.length; i++) {
+							String test = allTrucks[i].toString(); 
+							if (test.contains(searchTruck)) {
+								System.out.println(allTrucks[i].toString());
+								break;
+							}  
+						
 						}
-					
+						
+					case "RATING":
+					case "BY RATING":
+					case "2":
+						System.out.print("What is the rating you gave the truck?   ");
+						String searchRating = kb.nextLine();
+						for (int i = 0; i < allTrucks.length; i++) {
+							String test = allTrucks[i].toString(); 
+							if (test.contains(searchRating)) {
+								System.out.println(allTrucks[i].toString());
+								break;
+							}
+						}
+						break;
+					case "3":
+					case "BY CATEGORY":
+					case "CATEGORY":
+						System.out.print("What is the rating you gave the truck?   ");
+						String searchMenuCategory = kb.nextLine();
+						for (int i = 0; i < allTrucks.length; i++) {
+							String test = allTrucks[i].toString(); 
+							if (test.contains(searchMenuCategory)) {
+								System.out.println(allTrucks[i].toString());
+								break;
+							} 
+						}
+						break;
+					case "4":
+					case "MAIN MENU":
+					case "MENU":
+					case "MAIN":
+						search = false;
+						break;
+					case "5": case "QUIT":
+						search = false;
+						keepGoing = false;
+					default: 	
+					System.out.println("Please enter a valid search option");
 					}
-					
+					break;
 				}
 			case "QUIT":
 			case "5":
@@ -78,17 +131,17 @@ public class FoodTruckApp {
 
 	private void searchMenu() {
 		System.out.println("\n\n\n<================================>");
-	System.out.println("|           SEARCH MENU          |");
-	System.out.println("|                                |");
-	System.out.println("|   1: By Name                   |");
-	System.out.println("|   2: By Rating                 |");
-	System.out.println("|   3: By Menu Category          |");
-	System.out.println("|   4: MAIN MENU                 |");
-	System.out.println("|                                |");
-	System.out.println("<================================>");
+		System.out.println("|           SEARCH MENU          |");
+		System.out.println("|                                |");
+		System.out.println("|   1: By Name                   |");
+		System.out.println("|   2: By Rating                 |");
+		System.out.println("|   3: By Category               |");
+		System.out.println("|   4: MAIN MENU                 |");
+		System.out.println("|                                |");
+		System.out.println("<================================>");
 
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	private void createTrucks() {
@@ -111,7 +164,7 @@ public class FoodTruckApp {
 
 			System.out.print("\nHow would you rate your experience? (Scale 1-10)   ");
 			int userRating = kb.nextInt();
-			runApp.setAverage((double)userRating);
+			runApp.setAverage((double) userRating);
 			runApp.setHighRating(userRating);
 
 			FoodTruck truck = new FoodTruck(truckName, menuType, userRating, numTrucks);
@@ -138,7 +191,7 @@ public class FoodTruckApp {
 	}
 
 	private void Goodbye() {
-		System.out.println("<================================>");
+		System.out.println("\n\n\n<================================>");
 		System.out.println("|                                |");
 		System.out.println("|                                |");
 		System.out.println("|                                |");
