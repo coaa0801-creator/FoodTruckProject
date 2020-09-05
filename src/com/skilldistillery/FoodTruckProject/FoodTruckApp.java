@@ -128,8 +128,8 @@ public class FoodTruckApp {
 					default: 	
 					System.out.println("Please enter a valid search option");
 					}
-					break;
 				}
+				break;
 			case "QUIT":
 			case "5":
 				keepGoing = false;
