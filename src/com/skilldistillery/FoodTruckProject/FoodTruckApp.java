@@ -1,5 +1,6 @@
 package com.skilldistillery.FoodTruckProject;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class FoodTruckApp {
@@ -7,7 +8,7 @@ public class FoodTruckApp {
 	FoodTruck[] allTrucks = new FoodTruck[5];
 	static FoodTruckApp runSys = new FoodTruckApp();
 	FoodTruck runApp = new FoodTruck();
-
+	DecimalFormat round = new DecimalFormat("#.0");
 	public static void main(String[] args) {
 //		FoodTruckApp runSys = new FoodTruckApp();
 		runSys.createTrucks();
@@ -30,8 +31,8 @@ public class FoodTruckApp {
 				}
 				break;
 			case 2:
-				int average = runApp.getAverage();
-				System.out.println("The average rating of the Food Trucks you have logged is: " + average);
+				double average = runApp.getAverage();
+				System.out.println("The average rating of the Food Trucks you have logged is: " + round.format(average));
 
 //				for (int numTrucks = 0; numTrucks < allTrucks.length; numTrucks++) {
 //					if (allTrucks[numTrucks] == null) {
@@ -73,7 +74,7 @@ public class FoodTruckApp {
 
 			System.out.print("\nHow would you rate your experience? (Scale 1-10)   ");
 			int userRating = kb.nextInt();
-			runApp.setAverage(userRating);
+			runApp.setAverage((double)userRating);
 			runApp.setHighRating(userRating);
 
 			FoodTruck truck = new FoodTruck(truckName, menuType, userRating, numTrucks);
@@ -86,7 +87,7 @@ public class FoodTruckApp {
 	}
 
 	private void PrintMenu() {
-		System.out.println("<================================>");
+		System.out.println("\n\n\n<================================>");
 		System.out.println("|            MAIN MENU           |");
 		System.out.println("|                                |");
 		System.out.println("|   1: List All Trucks           |");

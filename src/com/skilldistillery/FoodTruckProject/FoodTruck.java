@@ -4,7 +4,7 @@ package com.skilldistillery.FoodTruckProject;
 
 public class FoodTruck {
 	private static int MAX_TRUCKS = 5;
-	private int [] trucks = new int [MAX_TRUCKS];
+	private double [] trucks = new double [MAX_TRUCKS];
 	private String name;
 	private String category;
 	private int rating;
@@ -29,10 +29,10 @@ public class FoodTruck {
 	public String toString() {
 		return String.format("FoodTruck " + uniqueID + ":   %-15s  Serves: %-15s  You rated " + rating + " out of 10", name, category );
 	}
-	  public void addTruck(int cuurentNumberTrucks) {
-		    trucks[numTrucks] = cuurentNumberTrucks + 1;
-		    numTrucks++;    // increment to reflect that we have one more car
-		  }
+//	  public void addTruck(int cuurentNumberTrucks) {
+//		    trucks[numTrucks] = cuurentNumberTrucks + 1;
+//		    numTrucks++;    // increment to reflect that we have one more car
+//		  }
 //	public String getName() {
 //		return name;
 //	}
@@ -58,15 +58,15 @@ public class FoodTruck {
 		}
 		
 	}
-	public int getAverage() {
-	   int sum = 0;
+	public double getAverage() {
+	   double sum = 0;
 	   for (int i=0; i < trucks.length; i++) {
 		   sum = sum + trucks[i];
 	   }
-		 int average = sum / trucks.length;  
+		 double average = sum / trucks.length;  
 		return average;
 	}
-	public void setAverage(int rating) {
+	public void setAverage(double rating) {
 		 trucks[numTrucks] = rating;
 		    numTrucks++;   
 		
