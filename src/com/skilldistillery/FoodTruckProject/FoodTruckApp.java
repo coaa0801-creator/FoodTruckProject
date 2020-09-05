@@ -11,7 +11,9 @@ public class FoodTruckApp {
 //		FoodTruckApp runSys = new FoodTruckApp();
 		runSys.createTrucks();
 		runSys.runApp();
+		runSys.Goodbye();
 	}
+
 
 	private void runApp() {
 		FoodTruck runApp = new FoodTruck();
@@ -26,8 +28,8 @@ public class FoodTruckApp {
 						break;
 					}
 					System.out.println(allTrucks[numTrucks].toString());
-					break;
 				}
+				break;
 			case 2:
 				runApp.getAverage();
 				break;
@@ -50,14 +52,17 @@ public class FoodTruckApp {
 				+ "\n\nAt the beginning of any entry you may enter \"QUIT\" to exit");// Opening Statement "Welcome"
 
 		for (int numTrucks = 0; numTrucks < allTrucks.length; numTrucks++) {
+			
 			System.out.println("\n\n------" + "ENTRY " + (numTrucks + 1) + "------");
 			System.out.print("What was the name of the Food Truck?   ");
 			String truckName = kb.nextLine();
+			
 			if (truckName.equalsIgnoreCase("QUIT")) {
 				break;
 			}
 			System.out.print("\nWhat type of food was on the menu?   ");
 			String menuType = kb.nextLine();
+			
 			System.out.print("\nHow would you rate your experience? (Scale 1-10)   ");
 			int userRating = kb.nextInt();
 
@@ -81,6 +86,19 @@ public class FoodTruckApp {
 		System.out.println("|                                |");
 		System.out.println("<================================>");
 
+	}
+	private void Goodbye() {
+		System.out.println("<================================>");
+		System.out.println("|                                |");
+		System.out.println("|                                |");
+		System.out.println("|                                |");
+		System.out.println("|            GOODBYE             |");
+		System.out.println("|                                |");
+		System.out.println("|                                |");
+		System.out.println("|                                |");
+		System.out.println("<================================>");
+		// TODO Auto-generated method stub
+		
 	}
 
 }
