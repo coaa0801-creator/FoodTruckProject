@@ -71,13 +71,19 @@ public class FoodTruckApp {
 						System.out.print("What is the name of the truck?   ");
 						String searchTruck = kb.nextLine();
 						for (int i = 0; i < allTrucks.length; i++) {
-							String test = allTrucks[i].toString(); 
+							String test = allTrucks[i].toString();
+							if (test == null) {
+								
+							}
 							if (test.contains(searchTruck)) {
 								System.out.println(allTrucks[i].toString());
-								break;
+							}
+							if (!test.contains(searchTruck)) {
+							continue;
 							}  
-						
 						}
+						break;		
+							
 						
 					case "RATING":
 					case "BY RATING":
@@ -88,8 +94,11 @@ public class FoodTruckApp {
 							String test = allTrucks[i].toString(); 
 							if (test.contains(searchRating)) {
 								System.out.println(allTrucks[i].toString());
-								break;
+								
 							}
+							if (!test.contains(searchRating)) {
+								continue;
+							}  
 						}
 						break;
 					case "3":
@@ -101,8 +110,10 @@ public class FoodTruckApp {
 							String test = allTrucks[i].toString(); 
 							if (test.contains(searchMenuCategory)) {
 								System.out.println(allTrucks[i].toString());
-								break;
 							} 
+							if (!test.contains(searchMenuCategory)) {
+								continue;
+							}  
 						}
 						break;
 					case "4":
