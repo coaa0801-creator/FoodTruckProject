@@ -1,10 +1,16 @@
 package com.skilldistillery.FoodTruckProject;
 
+
+
 public class FoodTruck {
+	private static int MAX_TRUCKS = 5;
+	private int [] trucks = new int [MAX_TRUCKS];
 	private String name;
 	private String category;
 	private int rating;
 	private int uniqueID;
+	private int numTrucks = 0;
+	private int highRateTruck = 0; 
 	
 	
 	public FoodTruck(String truckName, String menuType, int userRating, int truckNumber) {
@@ -12,6 +18,8 @@ public class FoodTruck {
 		category = menuType;
 		rating = userRating;
 		uniqueID = truckNumber + 1;
+	 
+	     
 		
 	}
 	public FoodTruck() {
@@ -21,29 +29,48 @@ public class FoodTruck {
 	public String toString() {
 		return "FoodTruck " + uniqueID + ":  " + name + "\t\tServes:  " + category + "\t\tYou rated " + rating + " out of 10";
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+	  public void addTruck(int cuurentNumberTrucks) {
+		    trucks[numTrucks] = cuurentNumberTrucks + 1;
+		    numTrucks++;    // increment to reflect that we have one more car
+		  }
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public String getCategory() {
+//		return category;
+//	}
+//	public void setCategory(String category) {
+//		this.category = category;
+//	}
 	public int getHighRating() {
-		return rating;
+		return highRateTruck;
 	}
 	public void setHighRating(int rating) {
-		this.rating = rating;
+		
+		for(int i=0; i < trucks.length; i++) {
+			int highRate = 0;
+			if (trucks[i] > highRate) {
+				highRateTruck = i;
+			}
+		}
+		
 	}
 	public int getAverage() {
-		return rating;
+	   int sum = 0;
+	   for (int i=0; i < trucks.length; i++) {
+		   sum = sum + trucks[i];
+	   }
+		 int average = sum / trucks.length;  
+		return average;
 	}
 	public void setAverage(int rating) {
-		this.rating = rating;
+		 trucks[numTrucks] = rating;
+		    numTrucks++;   
+		
+		
 	}
 
 

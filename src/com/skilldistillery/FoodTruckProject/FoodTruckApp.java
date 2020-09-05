@@ -6,6 +6,7 @@ public class FoodTruckApp {
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] allTrucks = new FoodTruck[5];
 	static FoodTruckApp runSys = new FoodTruckApp();
+	FoodTruck runApp = new FoodTruck();
 
 	public static void main(String[] args) {
 //		FoodTruckApp runSys = new FoodTruckApp();
@@ -14,9 +15,7 @@ public class FoodTruckApp {
 		runSys.Goodbye();
 	}
 
-
 	private void runApp() {
-		FoodTruck runApp = new FoodTruck();
 		boolean keepGoing = true;
 		while (keepGoing) {
 			runSys.PrintMenu();
@@ -31,10 +30,19 @@ public class FoodTruckApp {
 				}
 				break;
 			case 2:
-				runApp.getAverage();
+				int average = runApp.getAverage();
+				System.out.println("The average rating of the Food Trucks you have logged is: " + average);
+
+//				for (int numTrucks = 0; numTrucks < allTrucks.length; numTrucks++) {
+//					if (allTrucks[numTrucks] == null) {
+//						break;
+//					}
+//				 int[] average = new int[allTrucks.length] ; 
+//				 average [numTrucks] = runApp.getAverage() / allTrucks.length;
 				break;
 			case 3:
-				runApp.getHighRating();
+				int highRateTruck = runApp.getHighRating();
+				System.out.println("Your highest rated truck is " + allTrucks[highRateTruck].toString());
 				break;
 			case 4:
 				keepGoing = false;
@@ -52,19 +60,21 @@ public class FoodTruckApp {
 				+ "\n\nAt the beginning of any entry you may enter \"QUIT\" to exit");// Opening Statement "Welcome"
 
 		for (int numTrucks = 0; numTrucks < allTrucks.length; numTrucks++) {
-			
+
 			System.out.println("\n\n------" + "ENTRY " + (numTrucks + 1) + "------");
 			System.out.print("What was the name of the Food Truck?   ");
 			String truckName = kb.nextLine();
-			
+
 			if (truckName.equalsIgnoreCase("QUIT")) {
 				break;
 			}
 			System.out.print("\nWhat type of food was on the menu?   ");
 			String menuType = kb.nextLine();
-			
+
 			System.out.print("\nHow would you rate your experience? (Scale 1-10)   ");
 			int userRating = kb.nextInt();
+			runApp.setAverage(userRating);
+			runApp.setHighRating(userRating);
 
 			FoodTruck truck = new FoodTruck(truckName, menuType, userRating, numTrucks);
 			allTrucks[numTrucks] = truck;
@@ -87,6 +97,7 @@ public class FoodTruckApp {
 		System.out.println("<================================>");
 
 	}
+
 	private void Goodbye() {
 		System.out.println("<================================>");
 		System.out.println("|                                |");
@@ -98,7 +109,7 @@ public class FoodTruckApp {
 		System.out.println("|                                |");
 		System.out.println("<================================>");
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
