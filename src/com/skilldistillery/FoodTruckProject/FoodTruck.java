@@ -27,7 +27,7 @@ public class FoodTruck {
 	}
 	@Override
 	public String toString() {
-		return "FoodTruck " + uniqueID + ":  " + name + "\t\tServes:  " + category + "\t\tYou rated " + rating + " out of 10";
+		return String.format("FoodTruck " + uniqueID + ":   %-15s  Serves: %-15s  You rated " + rating + " out of 10", name, category );
 	}
 	  public void addTruck(int cuurentNumberTrucks) {
 		    trucks[numTrucks] = cuurentNumberTrucks + 1;
