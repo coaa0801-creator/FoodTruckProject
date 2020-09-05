@@ -55,11 +55,12 @@ public class FoodTruck {
 		
 	}
 	public double getAverage() {
-	   double sum = 0;
-	   for (int i=0; i < trucks.length; i++) {
+	   double [] avgCopy = new double[trucks.length];
+		double sum = 0;
+	   for (int i=0; i < avgCopy.length; i++) {
 		   sum = sum + trucks[i];
 	   }
-		 double average = sum / trucks.length;  
+		 double average = sum / avgCopy.length;  
 		return average;
 	}
 	public void setAverage(double rating) {
