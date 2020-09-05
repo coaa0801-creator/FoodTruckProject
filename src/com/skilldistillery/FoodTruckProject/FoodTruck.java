@@ -29,10 +29,6 @@ public class FoodTruck {
 	public String toString() {
 		return String.format("FoodTruck " + uniqueID + ":   %-15s  Serves: %-15s  You rated " + rating + " out of 10", name, category );
 	}
-//	  public void addTruck(int cuurentNumberTrucks) {
-//		    trucks[numTrucks] = cuurentNumberTrucks + 1;
-//		    numTrucks++;    // increment to reflect that we have one more car
-//		  }
 //	public String getName() {
 //		return name;
 //	}

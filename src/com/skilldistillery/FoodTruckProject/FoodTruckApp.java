@@ -9,6 +9,9 @@ public class FoodTruckApp {
 	static FoodTruckApp runSys = new FoodTruckApp();
 	FoodTruck runApp = new FoodTruck();
 	DecimalFormat round = new DecimalFormat("#.0");
+	
+	
+	
 	public static void main(String[] args) {
 //		FoodTruckApp runSys = new FoodTruckApp();
 		runSys.createTrucks();
