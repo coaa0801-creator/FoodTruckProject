@@ -84,6 +84,11 @@ public class FoodTruckApp {
 							continue;
 							}  
 						}
+						if (!allTrucks.toString().contains(searchTruck)) {
+							System.out.println("There is no Food Truck that has that name");
+							
+							
+						}
 						break;		
 							
 						
@@ -96,20 +101,30 @@ public class FoodTruckApp {
 							if (allTrucks[i] == null) {
 								continue;
 							}
-							String test = allTrucks[i].toString(); 
-							if (test.contains(searchRating)) {
+							if (searchRating == "10") {
+								String test = allTrucks[i].toString(); 
+							if (test.contains("10 out of 10")) {
 								System.out.println(allTrucks[i].toString());
 								
 							}
-							if (!test.contains(searchRating)) {
-								continue;
+							}
+							String test = allTrucks[i].toString(); 
+							if (!test.contains("10 out of 10")) {
+								if (test.contains(searchRating)) {
+								System.out.println(allTrucks[i].toString());
+													}
+							}
 							}  
+						if (!allTrucks.toString().contains(searchRating)) {
+							System.out.println("There is no Food Truck that has that rating");
+							
+							
 						}
 						break;
 					case "3":
 					case "BY CATEGORY":
 					case "CATEGORY":
-						System.out.print("What is the rating you gave the truck?   ");
+						System.out.print("What type of Food Truck menu category were you looking for?   ");
 						String searchMenuCategory = kb.nextLine();
 						for (int i = 0; i < allTrucks.length; i++) {
 							if (allTrucks[i] == null) {
@@ -123,6 +138,10 @@ public class FoodTruckApp {
 								continue;
 							}  
 						}
+						if (!allTrucks.toString().contains(searchMenuCategory)) {
+							System.out.println("There is no Food Truck that has that type of food");
+						}
+						
 						break;
 					case "4":
 					case "MAIN MENU":
@@ -167,7 +186,7 @@ public class FoodTruckApp {
 
 	private void createTrucks() {
 		System.out.print("Hello welcome to the My Favorite Food Truck App. "
-				+ "\n\nWhere you can log and recall your favorite Food Trucks based on your own ratings and the menu provided."
+				+ "\n\nWhere you can log and recall your favorite Food Trucks based on your own input, ratings, and the menu provided."
 				+ "\n\nTo get started today. Please enter up to 5 new Food Trucks into the database."
 				+ "\n\nAt the beginning of any entry you may enter \"QUIT\" to exit");// Opening Statement "Welcome"
 

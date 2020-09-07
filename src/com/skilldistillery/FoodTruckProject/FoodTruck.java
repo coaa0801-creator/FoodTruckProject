@@ -10,7 +10,7 @@ public class FoodTruck {
 	private int rating;
 	private int uniqueID;
 	private int numTrucks = 0;
-	private int highRateTruck = 0; 
+	private int highRateTruck; 
 	
 	
 	public FoodTruck(String truckName, String menuType, int userRating, int truckNumber) {
@@ -41,28 +41,33 @@ public class FoodTruck {
 //	public void setCategory(String category) {
 //		this.category = category;
 //	}
-	public int getHighRating() {
-		return highRateTruck;
-	}
 	public void setHighRating(int rating) {
 		int newHighRate = 0;
 		int highRate = rating;
 		for(int i=0; i < trucks.length; i++) {
 			if (newHighRate < highRate) {
 				newHighRate = highRate;
-			if (trucks[i] > newHighRate) {
-				highRateTruck = i;
+				if (trucks[i] == newHighRate) {
+					highRateTruck = i;
+				}
 			}
 		}
-		}
+	}
+	public int getHighRating() {
+		return highRateTruck;
 	}
 	public double getAverage() {
-	   double [] avgCopy = new double[trucks.length];
+	   double [] avgCopy;;
 		double sum = 0;
-	   for (int i=0; i < avgCopy.length; i++) {
+		double average = 0.0;
+	   for (int i=0; i < trucks.length; i++) {
+		   if (trucks[i] == 0.0) {
+			   break;			   
+		   }
 		   sum = sum + trucks[i];
+		  avgCopy = new double [i+1];
+		  average = sum / avgCopy.length;  
 	   }
-		 double average = sum / avgCopy.length;  
 		return average;
 	}
 	public void setAverage(double rating) {
