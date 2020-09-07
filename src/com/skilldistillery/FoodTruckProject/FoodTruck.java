@@ -45,11 +45,10 @@ public class FoodTruck {
 		int newHighRate = 0;
 		int highRate = rating;
 		for(int i=0; i < trucks.length; i++) {
-			if (newHighRate < highRate) {
+			if (trucks[i] > newHighRate) {
 				newHighRate = highRate;
-				if (trucks[i] == newHighRate) {
-					highRateTruck = i;
-				}
+				highRateTruck = i;
+				
 			}
 		}
 	}
