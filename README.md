@@ -7,11 +7,9 @@ The purpose of this program is to open by taking user input about Food Trucks to
 ## Step by Step (Short Version)
 1. Welcome ->
 2. Choose to create a Food Truck entry or choose to QUIT
-
- 1a. Repeat until 5 trucks entered or QUIT to Main menu
+  2a. Repeat until 5 trucks entered or QUIT to Main menu
 3. Choose a data recall preference from the menu
-
- 2a If you choose to search (4) -> Choose search type and enter search
+  3a If you choose to search (4) -> Choose search type and enter search
 4. Navigate and choose recall data as long as you desire
 5. QUIT to exit the Programs
 
