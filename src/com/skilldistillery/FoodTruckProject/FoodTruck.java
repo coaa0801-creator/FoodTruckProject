@@ -23,24 +23,11 @@ public class FoodTruck {
 		
 	}
 	public FoodTruck() {
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return String.format("FoodTruck " + uniqueID + ":   %-15s  Serves: %-15s  You rated " + rating + " out of 10", name, category );
 	}
-//	public String getName() {
-//		return name;
-//	}
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//	public String getCategory() {
-//		return category;
-//	}
-//	public void setCategory(String category) {
-//		this.category = category;
-//	}
 	public void setHighRating(int rating) {
 		int newHighRate = 0;
 		int highRate = rating;

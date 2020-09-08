@@ -6,14 +6,12 @@ import java.util.Scanner;
 public class FoodTruckApp {
 	Scanner kb = new Scanner(System.in);
 	FoodTruck[] allTrucks = new FoodTruck[5];
-//	TODO fix this value
 	
 	static FoodTruckApp runSys = new FoodTruckApp();
 	FoodTruck runApp = new FoodTruck();
 	DecimalFormat round = new DecimalFormat("#.0");
 
 	public static void main(String[] args) {
-//		FoodTruckApp runSys = new FoodTruckApp();
 		runSys.createTrucks();
 		runSys.runApp();
 		runSys.Goodbye();
@@ -180,7 +178,6 @@ public class FoodTruckApp {
 		System.out.println("|                                |");
 		System.out.println("<================================>");
 
-		// TODO Auto-generated method stub
 
 	}
 
@@ -213,7 +210,6 @@ public class FoodTruckApp {
 
 		}
 
-		// TODO Auto-generated method stub
 	}
 
 	private void PrintMenu() {
@@ -240,7 +236,6 @@ public class FoodTruckApp {
 		System.out.println("|                                |");
 		System.out.println("|                                |");
 		System.out.println("<================================>");
-		// TODO Auto-generated method stub
 
 	}
 
