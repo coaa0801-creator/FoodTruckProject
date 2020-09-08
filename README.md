@@ -39,7 +39,7 @@ I still want to figure out what to do when we have a scanner searching for an in
 
 Balance is hard. I'm coming out of a work environment that sucked up all my time and never got to see my family because of it. So the priority is always to make sure I spend more time with them. I think that contributed to a little less allocation of time to the project this week. That's OK, because I was still able to complete the project but that little sour taste of not doing what I envisioned to with it is a bit frustrating.
 
-For the project itself I became a lot more comfortable with class variables and objects. That made life a lot easier when calling duplicate variables or when using the created array in multiple methods.
+For the project itself, I became a lot more comfortable with class variables and objects. That made life a lot easier when calling duplicate variables or when using the created array in multiple methods.
 
 ## Course Material Used
 1. Arrays
