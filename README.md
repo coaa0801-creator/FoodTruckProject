@@ -5,7 +5,7 @@
 The purpose of this program is to open by taking user input about Food Trucks to store for later recall by the user. Entries will be stored and are recalled by the user using the menu function. Options include; Seeing all trucks at the same time (Name, rating and menu category) finding the average of all Truck ratings and finding the highest rated truck. We also recently added search functionality where the user may search a specific truck or trucks based on name, rating or menu category.
 
 ## Step by Step (Short Version)
-1. Welcome ->
+1. Welcome
 2. Choose to create a Food Truck entry or choose to QUIT
 
     2a. Repeat until 5 trucks entered or QUIT to Main menu
@@ -15,7 +15,8 @@ The purpose of this program is to open by taking user input about Food Trucks to
     3a If you choose to search (4) -> Choose search type and enter search
 
 4. Navigate and choose recall data as long as you desire
-5. QUIT to exit the Programs
+5. QUIT to exit the program
+6. Goodbye display
 
 ## Walkthrough (Long Version)
 
